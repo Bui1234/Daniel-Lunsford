@@ -1,0 +1,339 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+:root
+{
+  /* INFORMATION */
+  --information-size: 20px;
+  --information-color:red;
+/* HEADER */
+--header-color:red;
+--header-size:20px;
+--header-background:black;
+/* CONTAINER */
+--container-a-color:white;
+  --container-size:20px;
+--container-background:black;
+--container-background-color:red;
+--container-transition:0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+--container-boder:2px solid black;
+/* BOOKS*/
+--books-size:25px;
+--books-color:rgb(13, 4, 4);
+/* MENU-BOOKS */
+--menu-books-size:20px;
+--menu-books-color-1:rgb(65, 64, 64);
+--menu-books-color-2:rgb(190, 188, 188);
+--menu-books-bacground-color:rgb(214, 89, 44);
+/* PERSONAL-INFORMATION */
+--personal-information--size:15px;
+--personal-information-backgroud-color:black;
+--personal-information--color:white;
+--personal-information--boder-top:2px solid white;
+}
+body
+{
+position: relative;
+}
+/* INFORMATION */
+.information
+{
+  position: absolute;
+  top: 10%;
+ right: 0;
+  width: 30px ;
+  height: 100%;
+  font-size: var(--information-size);
+  position: fixed;
+}
+.information a
+{
+  color: var(--information-color);
+}
+.cart 
+{
+  margin-bottom: 200px;
+}
+.facebook,.youtube,.instagram
+{
+  padding: 20px 0;
+}
+/* HEADER */
+#header
+{
+ min-height: 60px;
+ font-size: var(--header-size);
+ background:var(--header-background) ;
+ color: var(--header-color);
+ display: flex;
+ justify-content: space-around;
+}
+.picture-one 
+{
+  width: 100px;
+  min-height: 60px;
+  background-image: url("picture/books.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+}
+.bar
+{
+  margin: auto 16px;
+}
+.daneillunsford
+{
+margin: auto;
+padding: 10px 0;
+}
+/* CONTAINER */
+.container
+{
+  min-height: 60px;
+ font-size: var(--container-size);
+ background:var(--container-background);
+ display: flex;
+ justify-content: space-between;
+}
+/*CLICK CONTAINER*/
+.container
+{
+display: none;
+ transition: var(--container-transition);
+}
+.clickcontainer
+{
+  display: flex;
+}
+.sub-menu
+{
+  display: flex;
+  margin: auto ;
+  list-style: none;
+  flex-direction: column;
+  transition:var(--container-transition);
+}
+.item-one,.item-two,.item-thrre,.item-fore,.item-five,.item-six
+{
+  order: 1;
+}
+.item-sevent
+{
+  order: 0;
+}
+.sub-menu li a
+{
+  text-decoration: none;
+  color: var(--container-a-color);
+  padding: 0px 20px;
+}
+.sub-menu li:hover
+{
+  background-color:var(--container-background-color);
+  transition: var(--container-transition);
+}
+.sub-item
+{
+  padding: 8px 0;
+  border: var(--container-boder);
+}
+/* THIET LAP BODER CHO CONTAINER */
+.container .sub-menu >li>a
+{
+  position: relative;
+}
+.container .sub-menu >li>a::before
+{
+  content: "";
+  position: absolute;
+  width: 0;
+  left: 0;
+  top: 37px;
+  height: 2px;
+  background: var(--container-background-color);
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ opacity: 0;
+}
+.container .sub-menu >li:hover>a::before
+{
+ width: 100%;
+}
+/* BOOKS*/
+.books
+{
+  text-align: center;
+  padding: 20px 0;
+font-size: var(--books-size);
+color: var(--books-color);
+}
+/* MENU-BOOKS */
+#menu-books
+{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+}
+.books-1
+{
+   width: 306px;
+   height: 586px;
+   transition: 0.4s linear ;
+   text-align: center;
+   cursor: pointer;
+}
+.picture-books 
+{
+    overflow: hidden;
+}
+.picture-books .quick
+{
+
+text-decoration: none;
+position: absolute;
+top:0px ;
+left: 0px
+}
+.puick .quick-view
+{
+  text-decoration: none;
+  color: var(--menu-books-color-1);
+   position: relative;
+   top: 16px;
+}
+.books-1:hover .quick-view
+{
+  top: -15px;
+  transition: 0.6s linear ;
+}
+.books-text
+{
+    text-align: center;
+    font-size: var(--menu-books-size);
+}
+.books-text span
+{
+  font-weight: bold;
+}
+.books-text h4
+{
+  color: var(--menu-books-color-2);
+}
+.books-text .cart
+{
+  width: 100%;
+  background-color:var(--menu-books-bacground-color);
+ border-radius: 50px;
+ opacity: 0;
+ transition: 0.4s linear;
+}
+.books-text .cart:hover
+{
+  opacity: 0.1;
+  transition: 0.6s linear;
+}
+.books-1:hover .cart
+{
+  opacity: 1;
+  transition: 0.60s;
+}
+/* PERSONAL-INFORMATION */
+.personal-information
+{
+  background-color:var(--personal-information-backgroud-color);
+  min-height: 500px;
+  flex-wrap: wrap;
+}
+.information-personal
+{
+  width: 80%;
+  margin: auto;
+  display: flex;
+color: var(--personal-information--color);
+font-size: var(--personal-information--size);
+flex-direction: column;
+}
+.information-text 
+{
+  text-align: center;
+  padding: 50px 0;
+  flex: 1;
+}
+.information-text h2
+{
+  width: 95%;
+}
+.information-text p
+{
+  width: 70%;
+  margin: auto;
+  padding: 10px 0;
+}
+.information-text a
+{
+  color: var(--personal-information--color);
+  text-decoration: none;
+}
+.information-text-one
+{
+  color: var(--personal-information--color);
+  text-align: center;
+  margin-top: 190px;
+}
+.information-text-one p
+{
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
+   border-top: var(--personal-information--boder-top);
+}
+@media screen and (min-width:740px) 
+{
+  /* FLEX-DIRECTION:ROW */
+  .sub-menu,#wp-content,.menu-books,.book-text,.information-personal
+  {
+    flex-direction: row;
+  }
+.information
+{
+  right: 0;
+  font-size: 25px;
+  width: 50px;
+}
+  .bar
+  {
+    display: none;
+  }
+  .picture-one
+  {
+   display: block;
+  }
+  .container
+  {
+display: flex;
+  }
+  .item-sevent
+  {
+    order: 1;
+  }
+ .item-thrre,.sub-menu li:hover
+{
+  background-color:var(--container-background-color);
+  transition: var(--container-transition);
+}
+  .sub-menu
+  {
+    margin: auto;
+  }
+.container .sub-menu >li>a::before
+{
+  opacity: 1;
+}
+.books
+{
+  font-size: 50px;
+}
+}
